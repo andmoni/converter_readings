@@ -32,6 +32,9 @@ class Ui_MainWindowConverter(object):
         self.tw_tabs_menu.setSizePolicy(sizePolicy)
         self.tw_tabs_menu.setMinimumSize(QtCore.QSize(0, 80))
         self.tw_tabs_menu.setMaximumSize(QtCore.QSize(16777215, 80))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.tw_tabs_menu.setFont(font)
         self.tw_tabs_menu.setTabPosition(QtWidgets.QTabWidget.North)
         self.tw_tabs_menu.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.tw_tabs_menu.setObjectName("tw_tabs_menu")
@@ -159,6 +162,9 @@ class Ui_MainWindowConverter(object):
         self.line_4.setObjectName("line_4")
         self.horizontalLayout_2.addWidget(self.line_4)
         self.gb_alignment = QtWidgets.QGroupBox(self.tm_edit)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.gb_alignment.setFont(font)
         self.gb_alignment.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.gb_alignment.setFlat(True)
         self.gb_alignment.setCheckable(False)
@@ -219,6 +225,9 @@ class Ui_MainWindowConverter(object):
         self.line_3.setObjectName("line_3")
         self.horizontalLayout_2.addWidget(self.line_3)
         self.gb_font = QtWidgets.QGroupBox(self.tm_edit)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.gb_font.setFont(font)
         self.gb_font.setAlignment(QtCore.Qt.AlignCenter)
         self.gb_font.setFlat(True)
         self.gb_font.setObjectName("gb_font")
@@ -262,6 +271,9 @@ class Ui_MainWindowConverter(object):
         self.fcb_font_name = QtWidgets.QFontComboBox(self.gb_font)
         self.fcb_font_name.setMinimumSize(QtCore.QSize(150, 32))
         self.fcb_font_name.setMaximumSize(QtCore.QSize(16777215, 32))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.fcb_font_name.setFont(font)
         self.fcb_font_name.setFontFilters(QtWidgets.QFontComboBox.AllFonts)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
@@ -273,7 +285,11 @@ class Ui_MainWindowConverter(object):
         self.cb_font_size = QtWidgets.QComboBox(self.gb_font)
         self.cb_font_size.setMinimumSize(QtCore.QSize(60, 32))
         self.cb_font_size.setMaximumSize(QtCore.QSize(60, 32))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.cb_font_size.setFont(font)
         self.cb_font_size.setEditable(True)
+        self.cb_font_size.setInsertPolicy(QtWidgets.QComboBox.NoInsert)
         self.cb_font_size.setObjectName("cb_font_size")
         self.cb_font_size.addItem("")
         self.cb_font_size.addItem("")
@@ -329,8 +345,8 @@ class Ui_MainWindowConverter(object):
         self.horizontalLayout_7.addItem(spacerItem3)
         self.tbtn_convert_man_testimony = QtWidgets.QToolButton(self.tm_converter)
         self.tbtn_convert_man_testimony.setEnabled(True)
-        self.tbtn_convert_man_testimony.setMinimumSize(QtCore.QSize(40, 40))
-        self.tbtn_convert_man_testimony.setMaximumSize(QtCore.QSize(40, 40))
+        self.tbtn_convert_man_testimony.setMinimumSize(QtCore.QSize(48, 48))
+        self.tbtn_convert_man_testimony.setMaximumSize(QtCore.QSize(48, 48))
         icon21 = QtGui.QIcon()
         icon21.addPixmap(QtGui.QPixmap(":/ico/icons/men2.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tbtn_convert_man_testimony.setIcon(icon21)
@@ -339,8 +355,8 @@ class Ui_MainWindowConverter(object):
         self.horizontalLayout_7.addWidget(self.tbtn_convert_man_testimony)
         self.tbtn_convert_woman_testimony = QtWidgets.QToolButton(self.tm_converter)
         self.tbtn_convert_woman_testimony.setEnabled(True)
-        self.tbtn_convert_woman_testimony.setMinimumSize(QtCore.QSize(40, 40))
-        self.tbtn_convert_woman_testimony.setMaximumSize(QtCore.QSize(40, 40))
+        self.tbtn_convert_woman_testimony.setMinimumSize(QtCore.QSize(48, 48))
+        self.tbtn_convert_woman_testimony.setMaximumSize(QtCore.QSize(48, 48))
         icon22 = QtGui.QIcon()
         icon22.addPixmap(QtGui.QPixmap(":/ico/icons/women2.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tbtn_convert_woman_testimony.setIcon(icon22)
@@ -672,7 +688,7 @@ class Ui_MainWindowConverter(object):
         self.act_reduce_font_size.triggered.connect(MainWindowConverter.reduceFontSize) # type: ignore
         self.tbtn_font_enlarge.clicked.connect(MainWindowConverter.enlargeFontSize) # type: ignore
         self.tbtn_font_reduce.clicked.connect(MainWindowConverter.reduceFontSize) # type: ignore
-        self.cb_font_size.currentTextChanged['QString'].connect(MainWindowConverter.updateFontNameSize) # type: ignore
+        self.cb_font_size.editTextChanged['QString'].connect(MainWindowConverter.updateFontNameSize) # type: ignore
         self.fcb_font_name.currentFontChanged['QFont'].connect(MainWindowConverter.updateFontNameSize) # type: ignore
         self.tbtn_setting.clicked.connect(MainWindowConverter.editSettingApp) # type: ignore
         self.act_classic.changed.connect(MainWindowConverter.updateInterface) # type: ignore

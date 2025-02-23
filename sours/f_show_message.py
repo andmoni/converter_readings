@@ -3,7 +3,7 @@
 """
 Created on 18.11.2023 г.
 
-@author: Cледователь.
+@author: Следователь (Andmoni@yandex.ru)
 """
 
 from PyQt5.QtWidgets import QMessageBox, QApplication

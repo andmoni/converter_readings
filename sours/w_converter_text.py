@@ -328,10 +328,10 @@ class WidgetConverterText(QWidget, Ui_WidgetConverterText):
         self.te_text_to_convert.customContextMenuRequested.connect(self.te_text_to_convert.context_menus)
         self.te_text_to_convert.textChanged.connect(self.unblocking)
         # Инициализация шрифта по умолчанию.
-        font = QFont('Times New Roman', 14)
+        font = QFont('Times New Roman', 12)
         self.te_text_to_convert.setFont(font)
         # Необходимо повторно задать размер текста, чтоб не было ошибок.
-        self.te_text_to_convert.setFontPointSize(14)
+        self.te_text_to_convert.setFontPointSize(12)
         self.verticalLayout.insertWidget(1, self.te_text_to_convert)
         self.setting = setting.get('setting_converter')
         # локальный буфер обмена

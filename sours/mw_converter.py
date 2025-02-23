@@ -8,34 +8,31 @@ Created on 14 фев. 2024 г.
 
 Главное окно конвертера показаний.
 
-
-Классический интерфес - с классическими toolbox menu (скрыть кнопку и меню с вкладками)
-современный интерфейс - с меню в виде вкладок (скрываем тоолбоксы меню и кнопки
+Описание:
+Классический интерфейс - с классическими toolbox menu (скрыть кнопку и меню с вкладками)
+современный интерфейс - с меню в виде вкладок (скрываем тулбоксы меню и кнопки
 переключающие их отображение)
 
 Errors:
 падение при вводе запятой в поле и символов в поле размера теста
 QRegExp("[^0-9.]")
 """
-from sours.UI.about_app import Ui_AboutApp
-from sours.d_send_mail import DialogSendDevMail
-from sours.f_show_message import show_message_dialog
-from sours.w_converter_setting import editingReplacementWords
-
 VERSION = 3.0
 
 from datetime import datetime
-
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QDoubleValidator
 from PyQt5.QtWidgets import (
-    QMainWindow, QActionGroup, QApplication, QFontDialog, QDialog,
-    qApp, QMenu
+    QMainWindow, QApplication, QFontDialog, QDialog, qApp, QMenu
 )
 from PyQt5.QtCore import Qt, QSize, QSettings, QPoint
 from sours.UI.mw_converter import Ui_MainWindowConverter
+from sours.UI.about_app import Ui_AboutApp
 from sours.d_converter_dictionary import load_replacement_words
 from sours.d_setting_app import DialogSettingApp, load_setting, write_setting
 from sours.w_converter_text import WidgetConverterText
+from sours.d_send_mail import DialogSendDevMail
+from sours.f_show_message import show_message_dialog
+from sours.w_converter_setting import editingReplacementWords
 
 
 class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
@@ -57,7 +54,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
 
         # создание действий и меню
         self._createActions()
-        # self._createToolBars()
+        self._createToolBars()
         # self._createMenus()
         # связывание кнопок и действий меню с методами окна
         self._connectActs()
@@ -100,6 +97,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def _createToolBars(self):
         """Создание дополнительных тул-баров и настройка тул-баров."""
         print('MainWindowInventory._create_tool_bars')
+        self.cb_font_size.setValidator(QDoubleValidator())
         self.status_bar.showMessage('Создал тул-бары.', 2000)
 
     def _connectActs(self):
@@ -247,6 +245,8 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         #print('MainWindowInventory.enlargeFontSize')
         font_size = self.editor.fontPointSize()
         font_size += 1
+        font_name = self.fcb_font_name.currentFont()
+        self.editor.setFont(font_name)
         self.editor.setFontPointSize(font_size)
         self.cb_font_size.setCurrentText(str(font_size))
 
@@ -256,6 +256,8 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         font_size = self.editor.fontPointSize()
         if font_size > 12:
             font_size -= 1
+            font_name = self.fcb_font_name.currentFont()
+            self.editor.setFont(font_name)
             self.editor.setFontPointSize(font_size)
             self.cb_font_size.setCurrentText(str(font_size))
 
@@ -330,9 +332,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         if self._setting_app['setting_app']['interface']:
             self.act_modern.setChecked(True)
             self.act_classic.setChecked(False)
-            print('Modern Interface')
         else:
-            print('Classic Interface')
             self.act_modern.setChecked(False)
             self.act_classic.setChecked(True)
         self.updateInterface()
@@ -341,7 +341,6 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         """Смена вида интерфейса."""
         print('MainWindowInventory.updateInterface')
         if self.act_classic.isChecked():
-            print('Classic Interface')
             # скрываем вкладки с кнопками и действие меню отображения вкладок
             self.act_v_tabs_menu.setVisible(False)
             self.tw_tabs_menu.setVisible(False)
@@ -351,7 +350,6 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
             self.act_v_converter_menu.setVisible(True)
             for key, value in self._setting_app['setting_app'].items():
                 if 'tool_bars' in key:
-                    print(value)
                     self.act_v_main_menu.setChecked(value.get('main'))
                     self.act_v_edit_menu.setChecked(value.get('edit'))
                     self.act_v_converter_menu.setChecked(value.get('convert'))
@@ -360,7 +358,6 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
                     self.tlb_converter.setVisible(value.get('convert'))
             self._setting_app['setting_app']['interface'] = 0
         else:
-            print('Modern Interface')
             self._setting_app['setting_app']['interface'] = 1
             self.act_v_tabs_menu.setVisible(True)
             self.tw_tabs_menu.setVisible(True)
@@ -389,7 +386,6 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         self._setting_app = load_setting()
         # загрузка словаря замены слов
         self.replacement_words = load_replacement_words()
-        print(self._setting_app)
 
     def _save_tool_bars_settings(self):
         """Сохранение настроек на диск."""
@@ -427,7 +423,6 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def aboutApp():
         """Вывод окна с информацией о приложении."""
         print('MainWindowInventory.about')
-        print('ознакомление со справкой о программе')
         aa = QDialog()
         ui = Ui_AboutApp()
         ui.setupUi(aa)

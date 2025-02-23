@@ -54,6 +54,11 @@
         <height>80</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
@@ -482,6 +487,11 @@
         </item>
         <item>
          <widget class="QGroupBox" name="gb_alignment">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>Alignment</string>
           </property>
@@ -680,6 +690,11 @@
         </item>
         <item>
          <widget class="QGroupBox" name="gb_font">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>Font</string>
           </property>
@@ -833,6 +848,11 @@
                <height>32</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
              <property name="toolTip">
               <string>Font name to text</string>
              </property>
@@ -868,6 +888,11 @@
                <height>32</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
              <property name="toolTip">
               <string>Size text</string>
              </property>
@@ -879,6 +904,9 @@
              </property>
              <property name="currentIndex">
               <number>1</number>
+             </property>
+             <property name="insertPolicy">
+              <enum>QComboBox::NoInsert</enum>
              </property>
              <item>
               <property name="text">
@@ -1069,14 +1097,14 @@ check</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>48</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>48</height>
            </size>
           </property>
           <property name="toolTip">
@@ -1104,14 +1132,14 @@ check</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>48</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>48</height>
            </size>
           </property>
           <property name="toolTip">
@@ -2057,7 +2085,7 @@ text</string>
   </connection>
   <connection>
    <sender>cb_font_size</sender>
-   <signal>currentTextChanged(QString)</signal>
+   <signal>editTextChanged(QString)</signal>
    <receiver>MainWindowConverter</receiver>
    <slot>updateFontNameSize()</slot>
    <hints>
