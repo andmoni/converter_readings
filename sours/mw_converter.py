@@ -309,8 +309,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         self._blockSignals(self._format_acts, False)
 
     def sendMailToDev(self):
-        """Написать мне письмо"""
-        # TODO: обновить метод
+        """Написать письмо разработчику"""
         print('MainWindowInventory.sendMailToDev')
         wid = DialogSendDevMail()
         a = wid.exec_()

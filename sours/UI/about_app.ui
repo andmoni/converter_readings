@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutApp</class>
+ <widget class="QDialog" name="AboutApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>О программе.</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/ico/icons/conver_ico_0.png</normaloff>:/ico/icons/conver_ico_0.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>463</width>
+        <height>454</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item alignment="Qt::AlignTop">
+        <widget class="QLabel" name="lbl_about">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+           <stylestrategy>PreferAntialias</stylestrategy>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Программа &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Конвертер показаний&lt;/span&gt;&amp;quot;. &lt;/p&gt;&lt;p&gt;Программа позволяет преобразовывать показания допрошенных по уголовному делу лиц, от первого лица в текст от третьего лица. &lt;/p&gt;&lt;p&gt;Имеет функции минималистичного редактора текста, автоматически исправляет текст в зависимости от выбранных настроек и приводит текст в одинаковый вид для вставки в обвинительное заключение. Встроен редактор словаря, используемого для автоматической замены. По сравнению со старыми версиями конвертера в словаре используется массив, состоящий из слов в единственном и множественном числе, в первом и от третьего лица, неопределенной формы. &lt;/p&gt;&lt;p&gt;Для конвертирования текста показаний: &lt;/p&gt;&lt;p&gt;1. Вставьте показания из опроса в текстовое поле (при необходимости отредактируйте). &lt;/p&gt;&lt;p&gt;2. Выберете, чьи показания (женщины или мужчины) преобразуются. &lt;/p&gt;&lt;p&gt;Поздравляю, текст преобразован. Осталось его скопировать и вставить, куда необходимо. (если включена настройка, то текст сразу скопируется в буфер обмена при преобразовании) &lt;/p&gt;&lt;p&gt;Предложения по улучшению или дополнению функционала присылайте на почту andmoni@yandex.ru &lt;/p&gt;&lt;p align=&quot;right&quot;&gt;С уважением, Андрей. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="btn_box">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn_box</sender>
+   <signal>rejected()</signal>
+   <receiver>AboutApp</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

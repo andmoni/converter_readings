@@ -529,6 +529,11 @@ class Ui_MainWindowConverter(object):
         self.act_edit_dic_converter.setObjectName("act_edit_dic_converter")
         self.act_help_FAQ = QtWidgets.QAction(MainWindowConverter)
         self.act_help_FAQ.setObjectName("act_help_FAQ")
+        self.act_send_mail_dev = QtWidgets.QAction(MainWindowConverter)
+        icon32 = QtGui.QIcon()
+        icon32.addPixmap(QtGui.QPixmap(":/ico/icons/document.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.act_send_mail_dev.setIcon(icon32)
+        self.act_send_mail_dev.setObjectName("act_send_mail_dev")
         self.interface_group = QtWidgets.QActionGroup(MainWindowConverter)
         self.interface_group.setProperty("Exclusive", True)
         self.interface_group.setObjectName("interface_group")
@@ -611,6 +616,8 @@ class Ui_MainWindowConverter(object):
         self.menu_help.addAction(self.act_about)
         self.menu_help.addAction(self.act_about_QT)
         self.menu_help.addAction(self.act_help_FAQ)
+        self.menu_help.addSeparator()
+        self.menu_help.addAction(self.act_send_mail_dev)
         self.menu_bar.addAction(self.menu_main.menuAction())
         self.menu_bar.addAction(self.menu_edit.menuAction())
         self.menu_bar.addAction(self.menu_view.menuAction())
@@ -673,6 +680,7 @@ class Ui_MainWindowConverter(object):
         self.act_about.triggered.connect(MainWindowConverter.aboutApp) # type: ignore
         self.act_about_QT.triggered.connect(MainWindowConverter.aboutQT) # type: ignore
         self.act_help_FAQ.triggered.connect(MainWindowConverter.helpFAQ) # type: ignore
+        self.act_send_mail_dev.triggered.connect(MainWindowConverter.sendMailToDev) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindowConverter)
 
     def retranslateUi(self, MainWindowConverter):
@@ -800,6 +808,7 @@ class Ui_MainWindowConverter(object):
         self.act_v_tabs_menu.setToolTip(_translate("MainWindowConverter", "Tabs Menu"))
         self.act_edit_dic_converter.setText(_translate("MainWindowConverter", "Edit dictionary converter"))
         self.act_help_FAQ.setText(_translate("MainWindowConverter", "Help (FAQ)"))
+        self.act_send_mail_dev.setText(_translate("MainWindowConverter", "Send dev mail"))
         self.act_classic.setText(_translate("MainWindowConverter", "Classic"))
         self.act_modern.setText(_translate("MainWindowConverter", "Modern"))
         self.act_align_left.setText(_translate("MainWindowConverter", "Left"))

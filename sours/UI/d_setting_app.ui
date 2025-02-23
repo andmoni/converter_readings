@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogSettingAll</class>
+ <widget class="QDialog" name="DialogSettingAll">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>680</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Setting</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_main">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QLabel" name="lbl_interface">
+       <property name="text">
+        <string>Interface:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmb_interface">
+       <item>
+        <property name="text">
+         <string>Classic</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Modern</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLabel" name="l_language">
+       <property name="text">
+        <string>Interface language:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmb_language">
+       <item>
+        <property name="text">
+         <string>English</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Русский</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabShape">
+      <enum>QTabWidget::Triangular</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="dbn_box">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cmb_language</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>DialogSettingAll</receiver>
+   <slot>changeLanguage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>278</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dbn_box</sender>
+   <signal>accepted()</signal>
+   <receiver>DialogSettingAll</receiver>
+   <slot>saveSetting()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>308</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>375</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dbn_box</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogSettingAll</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>398</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changeLanguage()</slot>
+  <slot>saveSetting()</slot>
+  <slot>editReplacementDictionary()</slot>
+  <slot>switchFontRow()</slot>
+ </slots>
+</ui>

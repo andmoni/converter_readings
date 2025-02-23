@@ -48,17 +48,18 @@ class Ui_AboutApp(object):
         self.verticalLayout.addWidget(self.lbl_about, 0, QtCore.Qt.AlignTop)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_2.addWidget(self.scrollArea)
-        self.btn_close = QtWidgets.QPushButton(AboutApp)
-        self.btn_close.setObjectName("btn_close")
-        self.verticalLayout_2.addWidget(self.btn_close, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+        self.btn_box = QtWidgets.QDialogButtonBox(AboutApp)
+        self.btn_box.setStandardButtons(QtWidgets.QDialogButtonBox.Close)
+        self.btn_box.setCenterButtons(True)
+        self.btn_box.setObjectName("btn_box")
+        self.verticalLayout_2.addWidget(self.btn_box)
 
         self.retranslateUi(AboutApp)
-        self.btn_close.clicked.connect(AboutApp.close) # type: ignore
+        self.btn_box.rejected.connect(AboutApp.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(AboutApp)
 
     def retranslateUi(self, AboutApp):
         _translate = QtCore.QCoreApplication.translate
         AboutApp.setWindowTitle(_translate("AboutApp", "О программе."))
         self.lbl_about.setText(_translate("AboutApp", "<html><head/><body><p align=\"center\">Программа &quot;<span style=\" font-weight:600;\">Конвертер показаний</span>&quot;. </p><p>Программа позволяет преобразовывать показания допрошенных по уголовному делу лиц, от первого лица в текст от третьего лица. </p><p>Имеет функции минималистичного редактора текста, автоматически исправляет текст в зависимости от выбранных настроек и приводит текст в одинаковый вид для вставки в обвинительное заключение. Встроен редактор словаря, используемого для автоматической замены. По сравнению со старыми версиями конвертера в словаре используется массив, состоящий из слов в единственном и множественном числе, в первом и от третьего лица, неопределенной формы. </p><p>Для конвертирования текста показаний: </p><p>1. Вставьте показания из опроса в текстовое поле (при необходимости отредактируйте). </p><p>2. Выберете, чьи показания (женщины или мужчины) преобразуются. </p><p>Поздравляю, текст преобразован. Осталось его скопировать и вставить, куда необходимо. (если включена настройка, то текст сразу скопируется в буфер обмена при преобразовании) </p><p>Предложения по улучшению или дополнению функционала присылайте на почту andmoni@yandex.ru </p><p align=\"right\">С уважением, Андрей. </p></body></html>"))
-        self.btn_close.setText(_translate("AboutApp", "Закрыть"))
 import res_rc

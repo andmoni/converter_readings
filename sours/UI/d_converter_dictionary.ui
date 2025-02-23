@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogConverterEditDictionary</class>
+ <widget class="QDialog" name="DialogConverterEditDictionary">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>924</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>770</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Сhanging the replacement dictionary</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_main">
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="tbtn_new">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>New</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/ico/icons/new.png</normaloff>:/ico/icons/new.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="tbtn_edit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Edit</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/ico/icons/edit_doc.png</normaloff>:/ico/icons/edit_doc.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="tbtn_delete">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Delete selected</string>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/ico/icons/delete.png</normaloff>:/ico/icons/delete.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLineEdit" name="le_filter">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Строка поиска</string>
+         </property>
+         <property name="placeholderText">
+          <string>введите слово для поиска</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="tbtn_clear_filter">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>7</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Удалить слово из словаря</string>
+         </property>
+         <property name="text">
+          <string>Clean
+filter</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tw_replacement_dictionary">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="dragDropOverwriteMode">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="rowCount">
+      <number>5</number>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>170</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <column>
+      <property name="text">
+       <string>Первое лицо (ед. число)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Третье лицо (ед. число)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Первое лицо (мн. число)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Третье лицо (мн. число)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Неопределенная форма</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="l_sum_info">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Всего в словаре {} слов для замены.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="dbn_box">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>dbn_box</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>722</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbtn_new</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>addWords()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbtn_edit</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>editWords()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbtn_delete</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>deleteWords()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tw_replacement_dictionary</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>editWords()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>769</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbtn_clear_filter</sender>
+   <signal>clicked()</signal>
+   <receiver>le_filter</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>736</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>688</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>le_filter</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>filterWords()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>548</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dbn_box</sender>
+   <signal>accepted()</signal>
+   <receiver>DialogConverterEditDictionary</receiver>
+   <slot>saveWordsDictionary()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>636</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>addWords()</slot>
+  <slot>editWords()</slot>
+  <slot>deleteWords()</slot>
+  <slot>filterWords()</slot>
+  <slot>saveWordsDictionary()</slot>
+ </slots>
+</ui>
