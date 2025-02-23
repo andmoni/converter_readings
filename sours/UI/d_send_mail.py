@@ -19,6 +19,9 @@ class Ui_DialogSendDevMail(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(DialogSendDevMail)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(DialogSendDevMail)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label.setFont(font)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.groupBox = QtWidgets.QGroupBox(DialogSendDevMail)
@@ -33,12 +36,14 @@ class Ui_DialogSendDevMail(object):
         self.verticalLayout.addWidget(self.groupBox)
         self.buttonBox = QtWidgets.QDialogButtonBox(DialogSendDevMail)
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Save)
         self.buttonBox.setCenterButtons(True)
         self.buttonBox.setObjectName("buttonBox")
         self.verticalLayout.addWidget(self.buttonBox)
 
         self.retranslateUi(DialogSendDevMail)
+        self.buttonBox.rejected.connect(DialogSendDevMail.reject) # type: ignore
+        self.buttonBox.accepted.connect(DialogSendDevMail.send_mail) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(DialogSendDevMail)
 
     def retranslateUi(self, DialogSendDevMail):
@@ -54,9 +59,9 @@ class Ui_DialogSendDevMail(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">to: andmoni@yandex.ru</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">e-mail: Добрый день, Андрей! Спасибо за программу.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">В программе «Опись» я нашел ошибку.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">В программе «Конвертер показаний» я нашел ошибку.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">[Описание ошибки]</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Я придумал как сделать программу лучше.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">[Описание улучшений]</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Спасибо за Ваш труд.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">С уважением, {ФИО}.</span></p></body></html>"))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">С уважением, (ваше имя).</span></p></body></html>"))

@@ -311,22 +311,8 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def sendMailToDev(self):
         """Написать письмо разработчику"""
         print('MainWindowInventory.sendMailToDev')
-        wid = DialogSendDevMail()
-        a = wid.exec_()
-        if a:
-            print('Письмо разработчику: {}'.format(wid.textEdit.toPlainText()))
-            with open(r'письмо разработчику.txt', 'w') as f:
-                import sysconfig
-                f.write(wid.textEdit.toPlainText())
-                f.write('Данные далее нужны для анализа ошибки и не содержат личной либо конфиденциальной информации')
-                f.write('Операционная система :: {}\n'.format(sysconfig.get_platform()))
-                f.write('Версия Python :: {}\n'.format(sysconfig.get_python_version()))
-                f.write('Версия программы "Конвертер показаний":: {}'.format(VERSION))
-            show_message_dialog(
-                parent=self, ico=2, title=2,
-                msg='Отправьте файл "письмо разработчику.txt" ' +
-                    'из каталога программы на электронную почту andmoni@yandex.ru.',
-                btn_a_text='Отправляю')
+        wid = DialogSendDevMail(str(VERSION))
+        wid.exec_()
 
     def editSettingApp(self):
         """Изменение настроек программы"""
