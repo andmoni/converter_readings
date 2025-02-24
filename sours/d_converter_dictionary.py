@@ -24,7 +24,6 @@ def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
         with open(words_file, encoding='utf-8') as f:
             line_words = f.readlines()
             version = line_words[0].split("::")[1].strip()
-            print(version)
             # пропускаем первые две строки файла
             for line_word in line_words[2:]:
                 # вдруг пустая строка или
