@@ -32,10 +32,10 @@ def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
                     continue
                 _words = line_word.split("::")
                 # добавление данных в словарь с удалением пробельных символов
-                words_dict[_words[1].strip()] = [_words[2].strip(),
+                words_dict[_words[0].strip()] = [_words[1].strip(),
+                                                 _words[2].strip(),
                                                  _words[3].strip(),
-                                                 _words[4].strip(),
-                                                 _words[0].strip()]
+                                                 _words[4].strip()]
     except IOError:
         print('Ошибка чтения словаря конвертера из файла: {}'.format(words_file))
         # при невозможности загрузить словарь, берем словарь по умолчанию
@@ -49,26 +49,26 @@ def save_replacement_words(replacement_words_dict: dict,
     """Сохранение словаря конвертера на диск"""
     version = datetime.today().strftime("%Y%m%d")
     lns = ['{}::{}\n'.format(
-        "version".ljust(26),
-        version.ljust(26)
+        "version".ljust(30),
+        version.ljust(30)
     ),
         '{}::{}::{}::{}::{}\n'.format(
-        "неопределенная форма".center(26),
-        "ед.ч. 1 лицо".center(26),
-        "ед.ч. 3 лицо".center(26),
-        "мн.ч. 1 лицо".center(26),
-        "мн.ч. 3 лицо".center(26)
+        "неопределенная форма".center(30),
+        "ед.ч. 1 лицо".center(30),
+        "ед.ч. 3 лицо".center(30),
+        "мн.ч. 1 лицо".center(30),
+        "мн.ч. 3 лицо".center(30)
     ), ]
     keys = list(replacement_words_dict.keys())
     keys.sort()
     for key in keys:
         words = replacement_words_dict.get(key)
         lns.append("{}::{}::{}::{}::{}\n".format(
-            words[3].ljust(26),
-            key.ljust(26),
-            words[0].ljust(26),
-            words[1].ljust(26),
-            words[2].ljust(26),
+            key.ljust(30),
+            words[0].ljust(30),
+            words[1].ljust(30),
+            words[2].ljust(30),
+            words[3].ljust(30),
         ))
     try:
         with open(file_replacement_dictionary, 'w', encoding='utf-8') as f:
@@ -86,7 +86,7 @@ def convert_dictionary_for_conversion(replacement_words_dict: dict):
     keys.sort()
     for key in keys:
         words = replacement_words_dict.get(key)
-        converted_dictionary[key] = words[0]
+        converted_dictionary[words[0]] = words[1]
         converted_dictionary[words[2]] = words[3]
     return converted_dictionary
 
@@ -145,16 +145,16 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
         row = 0
         for key in keys:
             self.tw_replacement_dictionary.insertRow(self.tw_replacement_dictionary.rowCount())
-            self.tw_replacement_dictionary.setItem(row, 0, QTableWidgetItem(key))
-            self.tw_replacement_dictionary.item(row, 0).setTextAlignment(8 | 128)
-            self.tw_replacement_dictionary.setItem(row, 1, QTableWidgetItem(_words_dict[key][0]))
-            self.tw_replacement_dictionary.item(row, 1).setTextAlignment(8 | 128)
-            self.tw_replacement_dictionary.setItem(row, 2, QTableWidgetItem(_words_dict[key][1]))
-            self.tw_replacement_dictionary.item(row, 2).setTextAlignment(8 | 128)
-            self.tw_replacement_dictionary.setItem(row, 3, QTableWidgetItem(_words_dict[key][2]))
-            self.tw_replacement_dictionary.item(row, 3).setTextAlignment(8 | 128)
-            self.tw_replacement_dictionary.setItem(row, 4, QTableWidgetItem(_words_dict[key][3]))
+            self.tw_replacement_dictionary.setItem(row, 4, QTableWidgetItem(key))
             self.tw_replacement_dictionary.item(row, 4).setTextAlignment(8 | 128)
+            self.tw_replacement_dictionary.setItem(row, 0, QTableWidgetItem(_words_dict[key][0]))
+            self.tw_replacement_dictionary.item(row, 0).setTextAlignment(8 | 128)
+            self.tw_replacement_dictionary.setItem(row, 1, QTableWidgetItem(_words_dict[key][1]))
+            self.tw_replacement_dictionary.item(row, 1).setTextAlignment(8 | 128)
+            self.tw_replacement_dictionary.setItem(row, 2, QTableWidgetItem(_words_dict[key][2]))
+            self.tw_replacement_dictionary.item(row, 2).setTextAlignment(8 | 128)
+            self.tw_replacement_dictionary.setItem(row, 3, QTableWidgetItem(_words_dict[key][3]))
+            self.tw_replacement_dictionary.item(row, 3).setTextAlignment(8 | 128)
             row += 1
         self.tw_replacement_dictionary.resizeRowsToContents()
         # выбор последнего документа в описи
@@ -167,7 +167,7 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
         result = wid.exec_()
         if result:
             words = wid.getWords()
-            self.replacement_words_dict[words[1]] = [words[2], words[3], words[4], words[0]]
+            self.replacement_words_dict[words[0]] = [words[1], words[2], words[3], words[4]]
             # обновление данных в таблице
             self.reviewData()
 
@@ -176,14 +176,14 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
         print('DialogConverterWordsList.editWords')
         # определение выбранной строки
         row = self.tw_replacement_dictionary.currentRow()
-        key = self.tw_replacement_dictionary.item(row, 0).text()
+        key = self.tw_replacement_dictionary.item(row, 4).text()
         words = [*self.replacement_words_dict.pop(key)]
-        words = [words[3], key, words[0], words[2], words[3],]
+        words = [key, words[0],words[1], words[2], words[3]]
         wid = DialogEditWords(words, self)
         res = wid.exec_()
         if res:
             words = wid.getWords()
-        self.replacement_words_dict[words[1]] = [words[2], words[3], words[4], words[0]]
+        self.replacement_words_dict[words[0]] = [words[1], words[2], words[3], words[4]]
         self.reviewData()
 
     def deleteWords(self) -> None:
