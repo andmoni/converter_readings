@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Converter</string>
+   <string>Конвертер показаний</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -43,8 +43,11 @@
      </item>
      <item>
       <widget class="QLabel" name="lbl_status_info">
+       <property name="toolTip">
+        <string>Информация о действиях в поле редактора конвертера показаний.</string>
+       </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Текст под замену.</string>
        </property>
       </widget>
      </item>
@@ -74,8 +77,12 @@
       </item>
       <item>
        <widget class="QPushButton" name="pbtn_men">
+        <property name="toolTip">
+         <string>Преобразует находящийся в редакторе текст мужских показаний.</string>
+        </property>
         <property name="text">
-         <string>Men</string>
+         <string>Мужские
+показания</string>
         </property>
         <property name="icon">
          <iconset resource="res.qrc">
@@ -91,8 +98,12 @@
       </item>
       <item>
        <widget class="QPushButton" name="pbtn_women">
+        <property name="toolTip">
+         <string>Преобразует находящийся в редакторе текст женских показаний.</string>
+        </property>
         <property name="text">
-         <string>Women</string>
+         <string>Женские
+показания</string>
         </property>
         <property name="icon">
          <iconset resource="res.qrc">

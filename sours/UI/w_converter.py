@@ -62,8 +62,13 @@ class Ui_WidgetConverterText(object):
 
     def retranslateUi(self, WidgetConverterText):
         _translate = QtCore.QCoreApplication.translate
-        WidgetConverterText.setWindowTitle(_translate("WidgetConverterText", "Converter"))
-        self.lbl_status_info.setText(_translate("WidgetConverterText", "TextLabel"))
-        self.pbtn_men.setText(_translate("WidgetConverterText", "Men"))
-        self.pbtn_women.setText(_translate("WidgetConverterText", "Women"))
+        WidgetConverterText.setWindowTitle(_translate("WidgetConverterText", "Конвертер показаний"))
+        self.lbl_status_info.setToolTip(_translate("WidgetConverterText", "Информация о действиях в поле редактора конвертера показаний."))
+        self.lbl_status_info.setText(_translate("WidgetConverterText", "Текст под замену."))
+        self.pbtn_men.setToolTip(_translate("WidgetConverterText", "Преобразует находящийся в редакторе текст мужских показаний."))
+        self.pbtn_men.setText(_translate("WidgetConverterText", "Мужские\n"
+"показания"))
+        self.pbtn_women.setToolTip(_translate("WidgetConverterText", "Преобразует находящийся в редакторе текст женских показаний."))
+        self.pbtn_women.setText(_translate("WidgetConverterText", "Женские\n"
+"показания"))
 import res_rc

@@ -6,32 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>500</width>
     <height>200</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>400</width>
+    <width>500</width>
     <height>200</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>400</width>
+    <width>500</width>
     <height>200</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Edit the converter's words</string>
+   <string>Редактор слов конвертера</string>
   </property>
   <property name="windowIcon">
    <iconset resource="res.qrc">
     <normaloff>:/ico/icons/edit_doc.png</normaloff>:/ico/icons/edit_doc.png</iconset>
   </property>
+  <property name="toolTip">
+   <string>Позволяет отредактировать слово и его спряжения для словаря замены.</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_main">
    <item>
     <layout class="QFormLayout" name="formLayout">
+     <property name="labelAlignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
      <property name="leftMargin">
       <number>6</number>
      </property>
@@ -40,53 +46,113 @@
      </property>
      <item row="0" column="0">
       <widget class="QLabel" name="lb_indefinite">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Неопределенная форма слова</string>
+       </property>
        <property name="text">
-        <string>Indefinite form </string>
+        <string>Неопределенная форма:</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="le_indefinite"/>
+      <widget class="QLineEdit" name="le_indefinite">
+       <property name="toolTip">
+        <string>Неопределенная форма слова</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="lb_f_person">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Слово спряженное в первом лице (единственном числе)</string>
+       </property>
        <property name="text">
-        <string>In the first person (singular):</string>
+        <string>В первом лице (единственном числе):</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="le_f_person"/>
+      <widget class="QLineEdit" name="le_f_person">
+       <property name="toolTip">
+        <string>Слово спряженное в первом лице (единственном числе)</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="lb_t_person">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Слово спряженное в третьем лице (единственном числе)</string>
+       </property>
        <property name="text">
-        <string>In the third person (singular):</string>
+        <string>В третьем лице (единственном числе):</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="le_t_person"/>
+      <widget class="QLineEdit" name="le_t_person">
+       <property name="toolTip">
+        <string>Слово спряженное в третьем лице (единственном числе)</string>
+       </property>
+      </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="lb_f_persons">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Слово спряженное в первом лице (множественном числе)</string>
+       </property>
        <property name="text">
-        <string>In the first person (plural):</string>
+        <string>В первом лице (множественом числе):</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="le_f_persons"/>
+      <widget class="QLineEdit" name="le_f_persons">
+       <property name="toolTip">
+        <string>Слово спряженное в первом лице (множественном числе)</string>
+       </property>
+      </widget>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="lb_t_persons">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Слово спряженное в третьем лице (множественном числе)</string>
+       </property>
        <property name="text">
-        <string>In the third person (plural):</string>
+        <string>В третьем лице (множественном числе):</string>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="le_t_persons"/>
+      <widget class="QLineEdit" name="le_t_persons">
+       <property name="toolTip">
+        <string>Слово спряженное в третьем лице (множественном числе)</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

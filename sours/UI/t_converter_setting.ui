@@ -6,16 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>508</width>
+    <width>623</width>
     <height>406</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Text converter setting</string>
+   <string>Настройки конвертера показаний</string>
   </property>
   <property name="windowIcon">
    <iconset resource="res.qrc">
     <normaloff>:/ico/icons/setting_conver.png</normaloff>:/ico/icons/setting_conver.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string>Виджет с настройками конвертера показаний.</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -31,22 +34,38 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>490</width>
+        <width>605</width>
         <height>388</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <widget class="QPushButton" name="pbnt_edit_dictionary">
+         <property name="toolTip">
+          <string>Вызвать окно изменения словаря для замены при преобразовании показаний.</string>
+         </property>
          <property name="text">
-          <string>Edit the dictionary</string>
+          <string>Изменить словарь</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/ico/icons/conver_ico_1.png</normaloff>:/ico/icons/conver_ico_1.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QGroupBox" name="gb_correct_text">
+         <property name="toolTip">
+          <string>Определяет действия программы по автоматическому исправлению текста.</string>
+         </property>
          <property name="title">
-          <string>Correction of the text:</string>
+          <string>Автоматически исправить в тексте:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -69,43 +88,61 @@
           </property>
           <item>
            <widget class="QCheckBox" name="chb_rm_breaks">
+            <property name="toolTip">
+             <string>Определяет неободимость объединения параграфов в один сплошной текст.</string>
+            </property>
             <property name="text">
-             <string>Remove line breaks (paragraphs)</string>
+             <string>Убрать разрыв строки (параграфы)</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_rm_tabs">
+            <property name="toolTip">
+             <string>Определяет неободимость замены табуляции в тексте пробелом.</string>
+            </property>
             <property name="text">
-             <string>Remove tabs</string>
+             <string>Убрать табуляцию из текста заменив пробелом.</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_rm_space_before_mark">
+            <property name="toolTip">
+             <string>Определяет неободимость уборки знака препинания перед знаком препинания.</string>
+            </property>
             <property name="text">
-             <string>Remove the space before the punctuation mark</string>
+             <string>Убрать пробел перед знаком препинания.</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_add_space_after_mark">
+            <property name="toolTip">
+             <string>Определяет неободимость добавления пробела после знака препинания.</string>
+            </property>
             <property name="text">
-             <string>Add the space after the punctuation mark</string>
+             <string>Добавить пробел после знака препинания</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_rm_double_space">
+            <property name="toolTip">
+             <string>Определяет неободимость уборки в редакторе лишних проелов..</string>
+            </property>
             <property name="text">
-             <string>Remove double spaces</string>
+             <string>Убрать лишние пробелы</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_convert_date">
+            <property name="toolTip">
+             <string>Определяет неободимость исправления написания даты в редакторе.</string>
+            </property>
             <property name="text">
-             <string>Change the spelling of dates</string>
+             <string>Исправить написание даты</string>
             </property>
            </widget>
           </item>
@@ -116,8 +153,11 @@
             </property>
             <item>
              <widget class="QCheckBox" name="chb_fix_font">
+              <property name="toolTip">
+               <string>Определяет необходимость автоматического исправления шрифта (типа и размера) текста в редакторе.</string>
+              </property>
               <property name="text">
-               <string>Fix the font</string>
+               <string>Исправить шрифт</string>
               </property>
              </widget>
             </item>
@@ -127,7 +167,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string>Font name:</string>
+               <string>Название шрифта:</string>
               </property>
              </widget>
             </item>
@@ -142,6 +182,9 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="toolTip">
+               <string>Определяет тип(название) шрифта для исправления в редакторе.</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -150,7 +193,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string>Font size:</string>
+               <string>Размер шрифта:</string>
               </property>
              </widget>
             </item>
@@ -170,6 +213,9 @@
                 <width>50</width>
                 <height>0</height>
                </size>
+              </property>
+              <property name="toolTip">
+               <string>Определяет размер шрифта для исправления в текстовом редакторе.</string>
               </property>
               <item>
                <property name="text">
@@ -205,8 +251,11 @@
        </item>
        <item>
         <widget class="QGroupBox" name="gb_after_conversion">
+         <property name="toolTip">
+          <string>Определяет действия программы после выполнения конвертирования текста.</string>
+         </property>
          <property name="title">
-          <string>After conversion:</string>
+          <string>Выполнить после преобразования показаний(текста):</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -231,8 +280,11 @@
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
              <widget class="QCheckBox" name="chb_add_before_text">
+              <property name="toolTip">
+               <string>Определяет добавлене фразы из текстового поля перед текстом в редакторе.</string>
+              </property>
               <property name="text">
-               <string>Add a phrase before the text:</string>
+               <string>Добавить фразу перед текстом:</string>
               </property>
              </widget>
             </item>
@@ -240,6 +292,9 @@
              <widget class="QLineEdit" name="lne_phrase_before">
               <property name="enabled">
                <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Напишите фразу для вставки перед текстом в редакторе после преобразования показаний.</string>
               </property>
              </widget>
             </item>
@@ -249,8 +304,11 @@
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QCheckBox" name="chb_add_after_text">
+              <property name="toolTip">
+               <string>Определяет добавлене в редакторе после текста фразы из текстового поля.</string>
+              </property>
               <property name="text">
-               <string>Add after the text a phrase:</string>
+               <string>Добавить после текста фразу:</string>
               </property>
              </widget>
             </item>
@@ -259,14 +317,23 @@
               <property name="enabled">
                <bool>false</bool>
               </property>
+              <property name="toolTip">
+               <string>Напишите фразу для вставки после текста в редакторе после преобразования показаний.</string>
+              </property>
              </widget>
             </item>
            </layout>
           </item>
           <item>
            <widget class="QCheckBox" name="chb_copy_to_clipboard">
+            <property name="toolTip">
+             <string>Определяет нужно ли копировать преобразованный текст в буфер обмена</string>
+            </property>
+            <property name="statusTip">
+             <string/>
+            </property>
             <property name="text">
-             <string>Copy text to clipboard</string>
+             <string>Скопировать текст в буфер обмена</string>
             </property>
            </widget>
           </item>

@@ -16,6 +16,10 @@ class Ui_DialogSendDevMail(object):
         DialogSendDevMail.setObjectName("DialogSendDevMail")
         DialogSendDevMail.setWindowModality(QtCore.Qt.ApplicationModal)
         DialogSendDevMail.resize(592, 378)
+        DialogSendDevMail.setAcceptDrops(True)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/ico/icons/document.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        DialogSendDevMail.setWindowIcon(icon)
         self.verticalLayout = QtWidgets.QVBoxLayout(DialogSendDevMail)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(DialogSendDevMail)
@@ -48,7 +52,8 @@ class Ui_DialogSendDevMail(object):
 
     def retranslateUi(self, DialogSendDevMail):
         _translate = QtCore.QCoreApplication.translate
-        DialogSendDevMail.setWindowTitle(_translate("DialogSendDevMail", "Письмо для разработчика"))
+        DialogSendDevMail.setWindowTitle(_translate("DialogSendDevMail", "Письмо разработчику"))
+        DialogSendDevMail.setToolTip(_translate("DialogSendDevMail", "Редактирование письма для разработчика"))
         self.label.setText(_translate("DialogSendDevMail", "Отредактируйте текст письма и отправьте его на электронную почту- andmoni@yandex.ru\n"
 "                        "))
         self.groupBox.setToolTip(_translate("DialogSendDevMail", "Напишите текст письма для меня"))
@@ -65,3 +70,4 @@ class Ui_DialogSendDevMail(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">[Описание улучшений]</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Спасибо за Ваш труд.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">С уважением, (ваше имя).</span></p></body></html>"))
+import res_rc

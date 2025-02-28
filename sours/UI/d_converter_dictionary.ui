@@ -17,7 +17,14 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Сhanging the replacement dictionary</string>
+   <string>Изменение словаря конвертера.</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/ico/icons/conver_ico_0.png</normaloff>:/ico/icons/conver_ico_0.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string>Окно позволяет изменить словарь для замены слов используемый программой для приобразования показаний.</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_main">
    <property name="bottomMargin">
@@ -39,8 +46,13 @@
          <height>40</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Добавить в словарь для конвертирования
+новое слово и его спряжения.</string>
+       </property>
        <property name="text">
-        <string>New</string>
+        <string>Новое
+слово</string>
        </property>
        <property name="icon">
         <iconset resource="res.qrc">
@@ -51,6 +63,9 @@
          <width>32</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+N</string>
        </property>
       </widget>
      </item>
@@ -71,8 +86,13 @@
          <height>40</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Изменить выбранное слово и его спряжения
+ всловаре для конвертирования.</string>
+       </property>
        <property name="text">
-        <string>Edit</string>
+        <string>Изменить
+слово</string>
        </property>
        <property name="icon">
         <iconset resource="res.qrc">
@@ -104,7 +124,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Delete selected</string>
+        <string>Удалить выбраное слово из словаря для конвертирования.</string>
        </property>
        <property name="text">
         <string>Delete</string>
@@ -146,7 +166,7 @@
           </font>
          </property>
          <property name="toolTip">
-          <string>Строка поиска</string>
+          <string>Строка поиска словаря по словарю для конвертирования.</string>
          </property>
          <property name="placeholderText">
           <string>введите слово для поиска</string>
@@ -160,13 +180,13 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>32</width>
+           <width>48</width>
            <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>32</width>
+           <width>48</width>
            <height>32</height>
           </size>
          </property>
@@ -176,11 +196,11 @@
           </font>
          </property>
          <property name="toolTip">
-          <string>Удалить слово из словаря</string>
+          <string>Очистить поле поиска слова по словарю.</string>
          </property>
          <property name="text">
-          <string>Clean
-filter</string>
+          <string>Сбросить
+фильтр</string>
          </property>
          <property name="iconSize">
           <size>
@@ -200,6 +220,9 @@ filter</string>
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="toolTip">
+      <string>Поле вывода таблицы со значениями из словаря для заменыслов используемом впрограмме.</string>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
@@ -275,6 +298,9 @@ filter</string>
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="toolTip">
+      <string>Информация о словаре для замены слов.</string>
      </property>
      <property name="text">
       <string>Всего в словаре {} слов для замены.</string>

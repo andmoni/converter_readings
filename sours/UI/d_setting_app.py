@@ -14,12 +14,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DialogSettingAll(object):
     def setupUi(self, DialogSettingAll):
         DialogSettingAll.setObjectName("DialogSettingAll")
-        DialogSettingAll.resize(680, 466)
+        DialogSettingAll.resize(700, 500)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(DialogSettingAll.sizePolicy().hasHeightForWidth())
         DialogSettingAll.setSizePolicy(sizePolicy)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/ico/icons/setting_app.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        DialogSettingAll.setWindowIcon(icon)
         self.verticalLayout_main = QtWidgets.QVBoxLayout(DialogSettingAll)
         self.verticalLayout_main.setObjectName("verticalLayout_main")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
@@ -69,10 +72,17 @@ class Ui_DialogSettingAll(object):
 
     def retranslateUi(self, DialogSettingAll):
         _translate = QtCore.QCoreApplication.translate
-        DialogSettingAll.setWindowTitle(_translate("DialogSettingAll", "Setting"))
-        self.lbl_interface.setText(_translate("DialogSettingAll", "Interface:"))
-        self.cmb_interface.setItemText(0, _translate("DialogSettingAll", "Classic"))
-        self.cmb_interface.setItemText(1, _translate("DialogSettingAll", "Modern"))
-        self.l_language.setText(_translate("DialogSettingAll", "Interface language:"))
+        DialogSettingAll.setWindowTitle(_translate("DialogSettingAll", "Настройки программы"))
+        DialogSettingAll.setToolTip(_translate("DialogSettingAll", "Окно изменения настроек программы. "))
+        self.lbl_interface.setToolTip(_translate("DialogSettingAll", "Изменяет интерфейс программы."))
+        self.lbl_interface.setText(_translate("DialogSettingAll", "Интерфейс программы:"))
+        self.cmb_interface.setToolTip(_translate("DialogSettingAll", "Выберете интерфейс программы из выпадающего меню."))
+        self.cmb_interface.setItemText(0, _translate("DialogSettingAll", "Классический"))
+        self.cmb_interface.setItemText(1, _translate("DialogSettingAll", "Современный"))
+        self.l_language.setToolTip(_translate("DialogSettingAll", "Изменяет язык интерфейса программы"))
+        self.l_language.setText(_translate("DialogSettingAll", "Язык интерфейса программы:"))
+        self.cmb_language.setToolTip(_translate("DialogSettingAll", "Выберете язык интерфейса программы из выпадающего меню."))
         self.cmb_language.setItemText(0, _translate("DialogSettingAll", "English"))
         self.cmb_language.setItemText(1, _translate("DialogSettingAll", "Русский"))
+        self.tabWidget.setToolTip(_translate("DialogSettingAll", "Вкладки с настройками программы."))
+import res_rc
