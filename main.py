@@ -8,7 +8,7 @@ Created on 19.02.2024 г.
 
 Основной модуль для запуска программы конвертера показаний.
 """
-
+import sys
 from PyQt5.QtWidgets import QApplication
 from sours.mw_converter import MainWindowConverter
 
@@ -27,6 +27,18 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # перехватываем системный вывод для лога
+    tmp_std_out = sys.stdout
+    # создаем лог-файл для записи системного вывода
+    file_log = open("system.log", 'w', encoding='utf-8')
+    # записываем системный вывод в файл
+    sys.stdout = file_log
+    try:
+        main()
+    except Exception as e:
+        print('Ошибка при работе программы: {}'.format(str(e)))
+    # возврат вывода в консоль
+    sys.stdout = tmp_std_out
+    file_log.close()
     input('Работа программы закончена, спасибо, что воспользовались ей.\n\
         Теперь это окно можно закрыть, для выхода нажмите любую кнопку.')

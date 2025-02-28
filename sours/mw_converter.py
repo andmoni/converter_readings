@@ -438,7 +438,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def closeEvent(self, event):
         """Действия при закрытии программы."""
         print('MainWindowInventory.closeEvent')
-        print(f'{datetime.today()} :: Выход из программы.')
+        print('{} :: Выход из программы.'.format(datetime.today()))
         self._write_settings()
         event.accept()
 
