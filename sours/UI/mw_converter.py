@@ -678,7 +678,7 @@ class Ui_MainWindowConverter(object):
         self.tlb_converter.addAction(self.act_grammar_check)
 
         self.retranslateUi(MainWindowConverter)
-        self.tw_tabs_menu.setCurrentIndex(2)
+        self.tw_tabs_menu.setCurrentIndex(1)
         self.cb_font_size.setCurrentIndex(1)
         self.act_quit.triggered.connect(MainWindowConverter.close) # type: ignore
         self.tbtn_quit.clicked.connect(MainWindowConverter.close) # type: ignore
