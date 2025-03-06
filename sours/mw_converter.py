@@ -377,6 +377,9 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         """Чтение настроек из реестра."""
         print('MainWindowInventory._read_settings')
         settings = QSettings("Nemec-soft", "Converter testimony")
+        f_run = settings.value("f_run", 1)
+        if f_run:
+            self.aboutApp()
         # settings.setFallbacksEnabled(True) посмотри что дает, включи если полезно
         size = settings.value("size", QSize(1000, 800))
         self.resize(size)
