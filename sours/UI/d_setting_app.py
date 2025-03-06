@@ -23,6 +23,7 @@ class Ui_DialogSettingAll(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/ico/icons/setting_app.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DialogSettingAll.setWindowIcon(icon)
+        DialogSettingAll.setLocale(QtCore.QLocale(QtCore.QLocale.Russian, QtCore.QLocale.Russia))
         self.verticalLayout_main = QtWidgets.QVBoxLayout(DialogSettingAll)
         self.verticalLayout_main.setObjectName("verticalLayout_main")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()

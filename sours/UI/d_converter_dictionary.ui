@@ -24,7 +24,7 @@
     <normaloff>:/ico/icons/conver_ico_0.png</normaloff>:/ico/icons/conver_ico_0.png</iconset>
   </property>
   <property name="toolTip">
-   <string>Окно позволяет изменить словарь для замены слов используемый программой для приобразования показаний.</string>
+   <string>Окно позволяет изменить словарь для замены слов используемый программой для преобразования показаний.</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_main">
    <property name="bottomMargin">
@@ -88,7 +88,7 @@
        </property>
        <property name="toolTip">
         <string>Изменить выбранное слово и его спряжения
- всловаре для конвертирования.</string>
+ в словаре для конвертирования.</string>
        </property>
        <property name="text">
         <string>Изменить
@@ -124,7 +124,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Удалить выбраное слово из словаря для конвертирования.</string>
+        <string>Удалить выбранное слово из словаря для конвертирования.</string>
        </property>
        <property name="text">
         <string>Delete</string>
@@ -222,7 +222,7 @@
       </font>
      </property>
      <property name="toolTip">
-      <string>Поле вывода таблицы со значениями из словаря для заменыслов используемом впрограмме.</string>
+      <string>Поле вывода таблицы со значениями из словаря для замены слов используемом в программе.</string>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>

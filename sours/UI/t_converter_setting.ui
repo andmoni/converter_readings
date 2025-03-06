@@ -89,7 +89,7 @@
           <item>
            <widget class="QCheckBox" name="chb_rm_breaks">
             <property name="toolTip">
-             <string>Определяет неободимость объединения параграфов в один сплошной текст.</string>
+             <string>Определяет необходимость объединения параграфов в один сплошной текст.</string>
             </property>
             <property name="text">
              <string>Убрать разрыв строки (параграфы)</string>
@@ -99,7 +99,7 @@
           <item>
            <widget class="QCheckBox" name="chb_rm_tabs">
             <property name="toolTip">
-             <string>Определяет неободимость замены табуляции в тексте пробелом.</string>
+             <string>Определяет необходимость замены табуляции в тексте пробелом.</string>
             </property>
             <property name="text">
              <string>Убрать табуляцию из текста заменив пробелом.</string>
@@ -109,7 +109,7 @@
           <item>
            <widget class="QCheckBox" name="chb_rm_space_before_mark">
             <property name="toolTip">
-             <string>Определяет неободимость уборки знака препинания перед знаком препинания.</string>
+             <string>Определяет необходимость уборки знака препинания перед знаком препинания.</string>
             </property>
             <property name="text">
              <string>Убрать пробел перед знаком препинания.</string>
@@ -119,7 +119,7 @@
           <item>
            <widget class="QCheckBox" name="chb_add_space_after_mark">
             <property name="toolTip">
-             <string>Определяет неободимость добавления пробела после знака препинания.</string>
+             <string>Определяет необходимость добавления пробела после знака препинания.</string>
             </property>
             <property name="text">
              <string>Добавить пробел после знака препинания</string>
@@ -129,7 +129,7 @@
           <item>
            <widget class="QCheckBox" name="chb_rm_double_space">
             <property name="toolTip">
-             <string>Определяет неободимость уборки в редакторе лишних проелов..</string>
+             <string>Определяет необходимость уборки в редакторе лишних пробелов..</string>
             </property>
             <property name="text">
              <string>Убрать лишние пробелы</string>
@@ -139,7 +139,7 @@
           <item>
            <widget class="QCheckBox" name="chb_convert_date">
             <property name="toolTip">
-             <string>Определяет неободимость исправления написания даты в редакторе.</string>
+             <string>Определяет необходимость исправления написания даты в редакторе.</string>
             </property>
             <property name="text">
              <string>Исправить написание даты</string>
@@ -281,7 +281,7 @@
             <item>
              <widget class="QCheckBox" name="chb_add_before_text">
               <property name="toolTip">
-               <string>Определяет добавлене фразы из текстового поля перед текстом в редакторе.</string>
+               <string>Определяет добавление фразы из текстового поля перед текстом в редакторе.</string>
               </property>
               <property name="text">
                <string>Добавить фразу перед текстом:</string>
@@ -305,7 +305,7 @@
             <item>
              <widget class="QCheckBox" name="chb_add_after_text">
               <property name="toolTip">
-               <string>Определяет добавлене в редакторе после текста фразы из текстового поля.</string>
+               <string>Определяет добавление в редакторе после текста фразы из текстового поля.</string>
               </property>
               <property name="text">
                <string>Добавить после текста фразу:</string>

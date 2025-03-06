@@ -410,7 +410,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
             self._setting_app['setting_app']['interface'] = 1
         # сохранение настроек в файл
         write_setting(self._setting_app)
-        print(self._setting_app)
+        #print(self._setting_app)
 
     def helpFAQ(self):
         """Вывод окна с помощью о приложении."""

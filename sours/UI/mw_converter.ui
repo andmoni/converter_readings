@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Конвертер текста</string>
+   <string>Конвертер текста показаний</string>
   </property>
   <property name="windowIcon">
    <iconset resource="res.qrc">
@@ -19,6 +19,9 @@
   </property>
   <property name="toolTip">
    <string>Главное окно конвертера текста.</string>
+  </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -532,7 +535,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Кнопки выравнивания пложения текста относительно границ.</string>
+           <string>Кнопки выравнивания положения текста относительно границ.</string>
           </property>
           <property name="title">
            <string>Выравнивание</string>
@@ -833,7 +836,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Опеределяет курсивное написание текста в редакторе.</string>
+              <string>Определяет курсивное написание текста в редакторе.</string>
              </property>
              <property name="text">
               <string>К</string>
@@ -871,7 +874,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Опеределяет подчеркнутое написание текста в редакторе.</string>
+              <string>Определяет подчеркнутое написание текста в редакторе.</string>
              </property>
              <property name="text">
               <string>П</string>
@@ -994,7 +997,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Enlarge text</string>
+              <string>Увеличить шрифт текста</string>
              </property>
              <property name="text">
               <string>+</string>
@@ -1026,7 +1029,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Reduce text</string>
+              <string>Уменьшить шрифт текста</string>
              </property>
              <property name="text">
               <string>-</string>
@@ -1273,7 +1276,7 @@
     <item>
      <widget class="QWidget" name="central_widget" native="true">
       <property name="toolTip">
-       <string>Виджет подзамену на виджет конвертера</string>
+       <string>Виджет под замену на виджет конвертера</string>
       </property>
      </widget>
     </item>
@@ -1335,7 +1338,7 @@
     </widget>
     <widget class="QMenu" name="menu_font">
      <property name="toolTip">
-      <string>Вызывает меню Шрифт с командами изменения шрифта тектса</string>
+      <string>Вызывает меню Шрифт с командами изменения шрифта текста</string>
      </property>
      <property name="title">
       <string>Шрифт</string>
@@ -1401,7 +1404,7 @@
     </property>
     <widget class="QMenu" name="menu_tool_bar">
      <property name="toolTip">
-      <string>Вызывает меню Панели инструментов с командами отображения панелейинструментов</string>
+      <string>Вызывает меню Панели инструментов с командами отображения панелей инструментов</string>
      </property>
      <property name="title">
       <string>Панели инструментов</string>
@@ -1705,7 +1708,7 @@
     <string>О программе.</string>
    </property>
    <property name="toolTip">
-    <string>Вызов окна сосведениями о программе. </string>
+    <string>Вызов окна со сведениями о программе. </string>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -1782,7 +1785,7 @@
     <string>Курсив</string>
    </property>
    <property name="toolTip">
-    <string>Опеределяет курсивное написание текста в редакторе.</string>
+    <string>Определяет курсивное написание текста в редакторе.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
@@ -1800,7 +1803,7 @@
     <string>Подчеркнутый</string>
    </property>
    <property name="toolTip">
-    <string>Опеределяет подчеркнутое написание текста в редакторе.</string>
+    <string>Определяет подчеркнутое написание текста в редакторе.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+U</string>
@@ -1930,7 +1933,7 @@
     <string>Проверка грамматики</string>
    </property>
    <property name="toolTip">
-    <string>Поиск грамматических ошибок в тексте редактора. (в разрабтке)</string>
+    <string>Поиск грамматических ошибок в тексте редактора. (в разработке)</string>
    </property>
    <property name="visible">
     <bool>true</bool>
@@ -1997,7 +2000,7 @@
     <string>Зачеркнутый</string>
    </property>
    <property name="toolTip">
-    <string>Опеределяет зачеркнутое написание текста в редакторе.</string>
+    <string>Определяет зачеркнутое написание текста в редакторе.</string>
    </property>
   </action>
   <actiongroup name="interface_group">
@@ -2020,7 +2023,7 @@
      <string>Современный</string>
     </property>
     <property name="toolTip">
-     <string>Смена интерфейса программы на совретенный вид (вкладки с командами).</string>
+     <string>Смена интерфейса программы на современный вид (вкладки с командами).</string>
     </property>
    </action>
    <property name="Exclusive" stdset="0">
