@@ -121,7 +121,7 @@
         <string>Слово спряженное в первом лице (множественном числе)</string>
        </property>
        <property name="text">
-        <string>В первом лице (множественом числе):</string>
+        <string>В первом лице (множественном числе):</string>
        </property>
       </widget>
      </item>

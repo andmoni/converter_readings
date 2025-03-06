@@ -26,6 +26,9 @@
   <property name="toolTip">
    <string>Окно изменения настроек программы. </string>
   </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_main">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_6">

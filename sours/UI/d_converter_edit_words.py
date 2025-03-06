@@ -101,7 +101,7 @@ class Ui_DialogConverterEditWords(object):
         self.lb_t_person.setText(_translate("DialogConverterEditWords", "В третьем лице (единственном числе):"))
         self.le_t_person.setToolTip(_translate("DialogConverterEditWords", "Слово спряженное в третьем лице (единственном числе)"))
         self.lb_f_persons.setToolTip(_translate("DialogConverterEditWords", "Слово спряженное в первом лице (множественном числе)"))
-        self.lb_f_persons.setText(_translate("DialogConverterEditWords", "В первом лице (множественом числе):"))
+        self.lb_f_persons.setText(_translate("DialogConverterEditWords", "В первом лице (множественном числе):"))
         self.le_f_persons.setToolTip(_translate("DialogConverterEditWords", "Слово спряженное в первом лице (множественном числе)"))
         self.lb_t_persons.setToolTip(_translate("DialogConverterEditWords", "Слово спряженное в третьем лице (множественном числе)"))
         self.lb_t_persons.setText(_translate("DialogConverterEditWords", "В третьем лице (множественном числе):"))

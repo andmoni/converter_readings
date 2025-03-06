@@ -129,24 +129,24 @@ class Ui_DialogConverterEditDictionary(object):
     def retranslateUi(self, DialogConverterEditDictionary):
         _translate = QtCore.QCoreApplication.translate
         DialogConverterEditDictionary.setWindowTitle(_translate("DialogConverterEditDictionary", "Изменение словаря конвертера."))
-        DialogConverterEditDictionary.setToolTip(_translate("DialogConverterEditDictionary", "Окно позволяет изменить словарь для замены слов используемый программой для приобразования показаний."))
+        DialogConverterEditDictionary.setToolTip(_translate("DialogConverterEditDictionary", "Окно позволяет изменить словарь для замены слов используемый программой для преобразования показаний."))
         self.tbtn_new.setToolTip(_translate("DialogConverterEditDictionary", "Добавить в словарь для конвертирования\n"
 "новое слово и его спряжения."))
         self.tbtn_new.setText(_translate("DialogConverterEditDictionary", "Новое\n"
 "слово"))
         self.tbtn_new.setShortcut(_translate("DialogConverterEditDictionary", "Ctrl+N"))
         self.tbtn_edit.setToolTip(_translate("DialogConverterEditDictionary", "Изменить выбранное слово и его спряжения\n"
-" всловаре для конвертирования."))
+" в словаре для конвертирования."))
         self.tbtn_edit.setText(_translate("DialogConverterEditDictionary", "Изменить\n"
 "слово"))
-        self.tbtn_delete.setToolTip(_translate("DialogConverterEditDictionary", "Удалить выбраное слово из словаря для конвертирования."))
+        self.tbtn_delete.setToolTip(_translate("DialogConverterEditDictionary", "Удалить выбранное слово из словаря для конвертирования."))
         self.tbtn_delete.setText(_translate("DialogConverterEditDictionary", "Delete"))
         self.le_filter.setToolTip(_translate("DialogConverterEditDictionary", "Строка поиска словаря по словарю для конвертирования."))
         self.le_filter.setPlaceholderText(_translate("DialogConverterEditDictionary", "введите слово для поиска"))
         self.tbtn_clear_filter.setToolTip(_translate("DialogConverterEditDictionary", "Очистить поле поиска слова по словарю."))
         self.tbtn_clear_filter.setText(_translate("DialogConverterEditDictionary", "Сбросить\n"
 "фильтр"))
-        self.tw_replacement_dictionary.setToolTip(_translate("DialogConverterEditDictionary", "Поле вывода таблицы со значениями из словаря для заменыслов используемом впрограмме."))
+        self.tw_replacement_dictionary.setToolTip(_translate("DialogConverterEditDictionary", "Поле вывода таблицы со значениями из словаря для замены слов используемом в программе."))
         self.tw_replacement_dictionary.setSortingEnabled(True)
         item = self.tw_replacement_dictionary.horizontalHeaderItem(0)
         item.setText(_translate("DialogConverterEditDictionary", "Первое лицо (ед. число)"))
