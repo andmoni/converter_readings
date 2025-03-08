@@ -8,8 +8,9 @@ Created on 19.02.2024 г.
 
 Основной модуль для запуска программы конвертера показаний.
 """
-import ctypes
-import sys, site
+# import ctypes
+import sys
+import site
 
 from PyQt5.QtCore import QLocale, QTranslator
 from PyQt5.QtWidgets import QApplication
@@ -22,34 +23,35 @@ print ('''
 
 
 def main():
+    '''
+    Главная функция по запуску приложения "Конвертер показаний"
+    :return: None
+    '''
     # задаем идентификатор приложения (для удобства отладки)
     #myappid = 'mycompany.myproduct.subproduct.version'
     #ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-
     # перехватываем системный вывод для лога
     #tmp_std_out = sys.stdout
     # создаем лог-файл для записи системного вывода
     #file_log = open("system.log", 'w', encoding='utf-8')
     # записываем системный вывод в файл
     #sys.stdout = file_log
+    # инициализируем приложение
     app = QApplication(sys.argv)
     # задаем локаль программы
     locale = QLocale.system().name()
     # загружаем стандартные переводы для приложения
     translator = QTranslator(app)
     # определяем место хранения библиотек site-packages
-    SP = site.getsitepackages()
+    site_pack = site.getsitepackages()
     # загружаем переводы для PyQt5
     translator.load('{}{}qtbase_{}.qm'.format(
-        SP[1], '\\PyQt5\\Qt5\\translations\\', locale.split('_')[0]))
+        site_pack[1], '\\PyQt5\\Qt5\\translations\\', locale.split('_')[0]))
     # устанавливаем загруженный переводы для приложения во всю программу
     app.installTranslator(translator)
     # запускаем главное окно приложения и показываем его
-    try:
-        main_win = MainWindowConverter()
-        main_win.show()
-    except Exception as e:
-        print('Ошибка при работе программы: {}'.format(str(e)))
+    main_win = MainWindowConverter()
+    main_win.show()
     # возврат вывода в консоль
     #sys.stdout = tmp_std_out
     #file_log.close()
