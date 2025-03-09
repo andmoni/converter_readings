@@ -10,7 +10,7 @@ Created on 14 фев. 2024 г.
 Окно диалога редактирования слов из словаря для конвертера показаний
 """
 
-from PyQt5.QtWidgets import QDialog, QMessageBox, QApplication
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from sours.UI.d_converter_edit_words import Ui_DialogConverterEditWords
 
 
@@ -109,7 +109,13 @@ class DialogEditWords(QDialog, Ui_DialogConverterEditWords):
 
 
 def test():
+    '''
+    Тестирование диалогового окна редактирования слов в словаре.
+    :return:
+    '''
     import sys
+    from PyQt5.QtWidgets import QApplication
+
     app = QApplication(sys.argv)
     wid = DialogEditWords(['a', 'b', 'c', 'd', 'f'])
     wid.show()

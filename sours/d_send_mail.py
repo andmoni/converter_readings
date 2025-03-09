@@ -11,13 +11,13 @@ Created on 19.02.2024 г.
 """
 
 from PyQt5.QtWidgets import QDialog
-
 from sours.UI.d_send_mail import Ui_DialogSendDevMail
 from sours.f_show_message import show_message_dialog
 
 
 class DialogSendDevMail(QDialog, Ui_DialogSendDevMail):
-    """Окно отправки письма разработчику
+    """
+    Окно отправки письма разработчику.
     """
 
     def __init__(self, version: str, parent=None):

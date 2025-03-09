@@ -9,8 +9,15 @@ Created on 18.11.2023 г.
 from PyQt5.QtWidgets import QMessageBox, QApplication
 
 
-def show_message_dialog(parent=None, ico: int = 0, title: int = 0, msg: str = 'Саечка на испуг.',
-                        btn_a_text: str = 'Получил', btn_c_text: str = '', btn_d_text: str = '') -> bool:
+def show_message_dialog(
+        parent=None,
+        ico: int = 0,
+        title: int = 0,
+        msg: str = 'Саечка на испуг.',
+        btn_a_text: str = 'Получил',
+        btn_c_text: str = '',
+        btn_d_text: str = ''
+    ) -> bool:
     """Отображение окна сообщения
     :param parent: Виджет (окно) инициатор вывода сообщения.
     :param ico: Код иконки в окне сообщения
@@ -38,10 +45,10 @@ def show_message_dialog(parent=None, ico: int = 0, title: int = 0, msg: str = '�
               3: 'Эй, Внимание!',
               4: 'Ой-вэй, Ошибочка!'}
     msg = QMessageBox(icons[ico], titles[title], msg, parent=parent)
-    if not btn_c_text == '':
+    if btn_c_text != '':
         msg.addButton(btn_c_text, QMessageBox.RejectRole)
     msg.addButton(btn_a_text, QMessageBox.AcceptRole)
-    if not btn_d_text == '':
+    if btn_d_text != '':
         msg.addButton(btn_d_text, QMessageBox.DestructiveRole)
     return msg.exec_()
 

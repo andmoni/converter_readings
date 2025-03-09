@@ -17,12 +17,10 @@ Errors:
 падение при вводе запятой в поле и символов в поле размера теста
 QRegExp("[^0-9.]")
 """
-VERSION = 3.0
 
-from datetime import datetime
 from PyQt5.QtGui import QFont, QDoubleValidator
 from PyQt5.QtWidgets import (
-    QMainWindow, QApplication, QFontDialog, QDialog, qApp, QMenu
+    QMainWindow, QFontDialog, QDialog, qApp, QMenu
 )
 from PyQt5.QtCore import Qt, QSize, QSettings, QPoint
 from sours.UI.mw_converter import Ui_MainWindowConverter
@@ -33,6 +31,9 @@ from sours.w_converter_text import WidgetConverterText
 from sours.d_send_mail import DialogSendDevMail
 from sours.f_show_message import show_message_dialog
 from sours.w_converter_setting import editingReplacementWords
+from datetime import datetime
+
+VERSION = 3.0
 
 
 class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
@@ -323,8 +324,8 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         a = wid.exec_()
         if a:
             self.setInterface()
-        # TODO: после закрытия обновить если а = ацепт,
-        #  проверить язык обновить отображение окон
+            # TODO: после закрытия обновить если а = ацепт,
+            #  проверить язык обновить отображение окон
 
     def setInterface(self):
         """Применение настроек интерфейса."""
@@ -418,9 +419,11 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def helpFAQ(self):
         """Вывод окна с помощью о приложении."""
         print('MainWindowInventory.helpFAQ')
-        show_message_dialog(self, 2, 2,
-                            'Простите. Помощь FAQ еще варится в нашем котелке.\nСледите за обновлениями на форуме.',
-                            "Придется ждать")
+        show_message_dialog(
+            self, 2, 2,
+            'Простите. Помощь FAQ еще варится в нашем котелке.\n'+
+            'Следите за обновлениями на форуме.',
+            "Придется ждать")
 
     @staticmethod
     def aboutApp():
@@ -456,8 +459,13 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
 
 
 def test():
+    '''
+    Тестирование главного окна приложения.
+    :return:
+    '''
     print('запуск теста')
     import sys
+    from PyQt5.QtWidgets import QApplication
     app = QApplication(sys.argv)
     wid = MainWindowConverter()
     wid.show()

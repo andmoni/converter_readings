@@ -44,8 +44,9 @@ def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
     return words_dict, version
 
 
-def save_replacement_words(replacement_words_dict: dict,
-                           file_replacement_dictionary: str = r'data/replacement_words.dict') -> int:
+def save_replacement_words(
+        replacement_words_dict: dict,
+        file_replacement_dictionary: str = r'data/replacement_words.dict') -> int:
     """Сохранение словаря конвертера на диск"""
     version = datetime.today().strftime("%Y%m%d")
     lns = ['{}::{}\n'.format(
@@ -106,7 +107,7 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
         self._switchSignals()
         # подключение сигналов
         self.tw_replacement_dictionary.currentItemChanged.connect(self._switchSignals)
-        
+
     def _switchSignals(self):
         """Включение-отключение кнопок"""
         self.tbtn_delete.setEnabled(False)
@@ -137,7 +138,8 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
             self.l_sum_info.setText(
                 'Всего в словаре {} слов для замены. '.format(len(self.replacement_words_dict)) +
                 'Отображено {} слов'.format(len(_words_dict)) if len(
-                    self.replacement_words_dict) else 'Слов с заданными условиями нет. Нечего показывать.')
+                    self.replacement_words_dict
+                ) else 'Слов с заданными условиями нет. Нечего показывать.')
         keys = list(_words_dict.keys())
         keys.sort()
         self.tw_replacement_dictionary.clearContents()

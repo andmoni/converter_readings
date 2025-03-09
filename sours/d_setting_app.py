@@ -12,7 +12,7 @@ Created on 16 фев. 2025 г.
 TODO: сменить вкладки на список групп настроек слева
 """
 import pickle
-from PyQt5.QtWidgets import QDialog, QApplication, QMessageBox
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from sours.UI.d_setting_app import Ui_DialogSettingAll
 from sours.d_converter_dictionary import load_replacement_words
 from sours.w_converter_setting import TabSettingConverterText, setting_converter
@@ -113,7 +113,12 @@ class DialogSettingApp(QDialog, Ui_DialogSettingAll):
 
 
 def test():
+    """
+    Тестирование диалога настроек.
+    :return:
+    """
     import sys
+    from PyQt5.QtWidgets import QApplication
     app = QApplication(sys.argv)
     saa = load_setting()
     rwd = load_replacement_words()[0]
