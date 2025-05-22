@@ -3,11 +3,10 @@
 
 """
 Created on 19.02.2024 г.
-
 @author: Следователь.
-
 Основной модуль для запуска программы конвертера показаний.
 """
+
 # import ctypes
 import sys
 import site
@@ -23,10 +22,10 @@ print ('''
 
 
 def main():
-    '''
+    """
     Главная функция по запуску приложения "Конвертер показаний"
     :return: None
-    '''
+    """
     # задаем идентификатор приложения (для удобства отладки)
     #myappid = 'mycompany.myproduct.subproduct.version'
     #ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)

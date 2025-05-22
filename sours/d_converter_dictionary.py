@@ -194,7 +194,7 @@ class DialogConverterEditDictionary(QDialog, Ui_DialogConverterEditDictionary):
         """
         print('DialogConverterWordsList.deleteWords')
         row = self.tw_replacement_dictionary.currentRow()
-        key = self.tw_replacement_dictionary.item(row, 0).text()
+        key = self.tw_replacement_dictionary.item(row, 4).text()
         self.replacement_words_dict.pop(key)
         self.reviewData()
 
