@@ -10,7 +10,7 @@ Created on 6 июн. 2025 г.
 Функция создания словаря автозамены в каталоге программы
 """
 
-origin_replacement_words_list = '''version                       ::20250227                      
+origin_replacement_words_list = ''' version                       ::20250227                      
      неопределенная форма     ::         ед.ч. 1 лицо         ::         ед.ч. 3 лицо         ::         мн.ч. 1 лицо         ::         мн.ч. 3 лицо         ::          проверено           
 абстрагировать                ::абстрагирую                   ::абстрагирует                  ::абстрагируем                  ::абстрагируют                  ::да                            
 автоматизировать              ::автоматизирую                 ::автоматизирует                ::автоматизируем                ::автоматизируют                ::да                            
@@ -9619,7 +9619,7 @@ key:спаться,words:['да']
 язвить                        ::язвлю                         ::язвит                         ::язвим                         ::язвят                         ::да                            
 якать                         ::якаю                          ::якает                         ::якаем                         ::якают                         ::да                            
 яснеть                        ::яснею                         ::яснеет                        ::яснеем                        ::яснеют                        ::да                            
-'''.split('/n')
+'''
 
 
 def create_replacement_words(
@@ -9627,7 +9627,7 @@ def create_replacement_words(
     """создаем файл со списком слов для замены"""
     try:
         with open(file_replacement_dictionary, 'w', encoding='utf-8') as f:
-            f.writelines(origin_replacement_words_list)
+            f.writelines(origin_replacement_words_list.split('\n'))
             return 1
     except Exception as e:
         print('Какая-то ошибка::{}'.format(e))

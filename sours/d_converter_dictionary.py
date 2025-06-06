@@ -14,7 +14,7 @@ from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QApplication
 from sours.UI.d_converter_dictionary import Ui_DialogConverterEditDictionary
 from sours.d_converter_edit_words import DialogEditWords
 from datetime import datetime
-from sours.f_create_dictionary import create_replacement_words, origin_replacement_words_list
+from sours.f_create_dictionary import origin_replacement_words_list, create_replacement_words
 
 
 # data/replacement_words.dict
@@ -28,11 +28,13 @@ def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
     except IOError:
         print('Ошибка чтения словаря конвертера из файла: {}'.format(words_file))
         # при невозможности загрузить словарь, берем словарь по умолчанию
-        lines_words = origin_replacement_words_list
+        lines_words = origin_replacement_words_list.split('\n')
         # Создаем словарь на диске.
         create_replacement_words()
 
+    print(lines_words[1])
     version = lines_words[0].split("::")[1].strip()
+    print(version)
     words_dict = {}
     # пропускаем первые две строки файла
     for line_word in lines_words[2:]:
@@ -46,7 +48,8 @@ def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
                                          _words[2].strip(),
                                          _words[3].strip(),
                                          _words[4].strip(),
-                                         _words[5].strip()]
+                                         #_words[5].strip()
+                                         ]
     return words_dict, version
 
 
