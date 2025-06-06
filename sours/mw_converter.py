@@ -17,6 +17,7 @@ Errors:
 падение при вводе запятой в поле и символов в поле размера теста
 QRegExp("[^0-9.]")
 """
+from typing import Any
 
 from PyQt5.QtGui import QFont, QDoubleValidator
 from PyQt5.QtWidgets import (
@@ -369,8 +370,10 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
             self.tlb_edit.setVisible(False)
             self.tlb_converter.setVisible(False)
 
-    def editReplacementWords(self):
-        """Изменение словаря замены слов."""
+    def editReplacementWords(self) -> None:
+        """Изменение словаря замены слов.
+        :rtype: None
+        """
         print('MainWindowInventory.editReplacementWords')
         editingReplacementWords(self.replacement_words)
 
@@ -407,6 +410,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
         # настройка размера окна и положения
         settings.setValue("pos", self.pos())
         settings.setValue("size", self.size())
+        #settings.setValue('f_run', 0)
         if self.act_classic.isChecked():
             self._save_tool_bars_settings()
             self._setting_app['setting_app']['interface'] = 0

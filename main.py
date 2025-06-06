@@ -6,7 +6,7 @@ Created on 19.02.2024 г.
 @author: Следователь.
 Основной модуль для запуска программы конвертера показаний.
 """
-
+import os
 # import ctypes
 import sys
 import site
@@ -48,6 +48,9 @@ def main():
         site_pack[1], '\\PyQt5\\Qt5\\translations\\', locale.split('_')[0]))
     # устанавливаем загруженный переводы для приложения во всю программу
     app.installTranslator(translator)
+    # проверяем и создаём папку для хранения данных если она не существуют."""
+    if not os.path.exists("data"):
+        os.mkdir("data")
     # запускаем главное окно приложения и показываем его
     main_win = MainWindowConverter()
     main_win.show()

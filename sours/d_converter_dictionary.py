@@ -7,40 +7,46 @@ Created on 14 фев. 2024 г.
 @author: Следователь (Andmoni@yandex.ru)
 @last_editing: 19.02.2025
 
-Окдно диалога вывода и изменения списка слов в словаре автозамены
+Окно диалога вывода и изменения списка слов в словаре автозамены
 """
 
 from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QApplication
 from sours.UI.d_converter_dictionary import Ui_DialogConverterEditDictionary
 from sours.d_converter_edit_words import DialogEditWords
 from datetime import datetime
+from sours.f_create_dictionary import create_replacement_words, origin_replacement_words_list
+
 
 # data/replacement_words.dict
 
+
 def load_replacement_words(words_file: str = r'data/replacement_words.dict'):
     """Загрузка словаря конвертера с диска"""
-    words_dict = {}
     try:
         with open(words_file, encoding='utf-8') as f:
-            line_words = f.readlines()
-            version = line_words[0].split("::")[1].strip()
-            # пропускаем первые две строки файла
-            for line_word in line_words[2:]:
-                # вдруг пустая строка или
-                # в строке нет разделителя - пропускаем
-                if "::" not in line_word.strip():
-                    continue
-                _words = line_word.split("::")
-                # добавление данных в словарь с удалением пробельных символов
-                words_dict[_words[0].strip()] = [_words[1].strip(),
-                                                 _words[2].strip(),
-                                                 _words[3].strip(),
-                                                 _words[4].strip()]
+            lines_words = f.readlines()
     except IOError:
         print('Ошибка чтения словаря конвертера из файла: {}'.format(words_file))
         # при невозможности загрузить словарь, берем словарь по умолчанию
-        # words_dict = _orig_words_dict
-        version = '0'
+        lines_words = origin_replacement_words_list
+        # Создаем словарь на диске.
+        create_replacement_words()
+
+    version = lines_words[0].split("::")[1].strip()
+    words_dict = {}
+    # пропускаем первые две строки файла
+    for line_word in lines_words[2:]:
+        # вдруг пустая строка или
+        # в строке нет разделителя - пропускаем
+        if "::" not in line_word.strip():
+            continue
+        _words = line_word.split("::")
+        # добавление данных в словарь с удалением пробельных символов
+        words_dict[_words[0].strip()] = [_words[1].strip(),
+                                         _words[2].strip(),
+                                         _words[3].strip(),
+                                         _words[4].strip(),
+                                         _words[5].strip()]
     return words_dict, version
 
 
