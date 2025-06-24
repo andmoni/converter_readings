@@ -34,7 +34,7 @@ from sours.f_show_message import show_message_dialog
 from sours.w_converter_setting import editingReplacementWords
 from datetime import datetime
 
-VERSION = 3.0
+VERSION = 3.1
 
 
 class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):

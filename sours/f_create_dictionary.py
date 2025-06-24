@@ -9622,12 +9622,11 @@ key:спаться,words:['да']
 '''
 
 
-def create_replacement_words(
-        file_replacement_dictionary: str = r'data/replacement_words.dict') -> int:
+def create_replacement_words(file_replacement_dictionary: str = r'data/replacement_words.dict') -> int:
     """создаем файл со списком слов для замены"""
     try:
         with open(file_replacement_dictionary, 'w', encoding='utf-8') as f:
-            f.writelines(origin_replacement_words_list.split('\n'))
+            f.write(origin_replacement_words_list)
             return 1
     except Exception as e:
         print('Какая-то ошибка::{}'.format(e))
