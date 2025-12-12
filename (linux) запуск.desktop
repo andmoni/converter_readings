@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=(linux) Запуск Конвертер показаний
+Name[ru]=(linux) Запуск Конвертер показаний
+Type=Application
+NoDisplay=false
+Exec=python3 main.py
+Hidden=false
+Terminal=false
+StartupNotify=false
