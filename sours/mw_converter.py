@@ -34,7 +34,7 @@ from sours.f_show_message import show_message_dialog
 from sours.w_converter_setting import editingReplacementWords
 from datetime import datetime
 
-VERSION = 3.1
+__version__ = '3.3'
 
 
 class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
@@ -315,7 +315,7 @@ class MainWindowConverter(QMainWindow, Ui_MainWindowConverter):
     def sendMailToDev(self):
         """Написать письмо разработчику"""
         print('MainWindowInventory.sendMailToDev')
-        wid = DialogSendDevMail(str(VERSION))
+        wid = DialogSendDevMail(str(__version__))
         wid.exec_()
 
     def editSettingApp(self):
